@@ -55,6 +55,12 @@ jobs:
           version: ">=0.11.x"
           args: "check"
 
+      - name: Build ragflow_deps
+        run: |
+          uv sync --python 3.10 --all-extras
+          uv run download_deps.py
+          docker build -t infiniflow/ragflow_deps -f Dockerfile.deps . 
+
       - name: Build ragflow:nightly-slim
         run: |
           RUNNER_WORKSPACE_PREFIX=${RUNNER_WORKSPACE_PREFIX:-$HOME}
