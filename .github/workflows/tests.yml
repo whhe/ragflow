@@ -52,6 +52,7 @@ jobs:
           pipx install uv pre-commit
           uv sync --python 3.10 --all-extras
           uv run download_deps.py
+          ls
           docker build -t infiniflow/ragflow_deps -f Dockerfile.deps . 
 
       - name: Build ragflow:nightly-slim
