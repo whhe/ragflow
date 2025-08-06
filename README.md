@@ -1,3 +1,16 @@
+# RAGFlow on OceanBase
+
+This is a fork of https://github.com/infiniflow/ragflow, which uses OceanBase as the meta database, storage engine, cache database and doc search engine. 
+
+To deploy it using docker compose:
+
+```shell
+cd docker
+docker compose -f docker-compose-oceanbase.yml --env-file .env.oceanbase up -d
+```
+
+-----
+
 <div align="center">
 <a href="https://demo.ragflow.io/">
 <img src="web/src/assets/logo-with-text.png" width="520" alt="ragflow logo">
